@@ -96,7 +96,7 @@ private:
     {
         double GripperGoal =  goal->goal;
         RCLCPP_INFO(get_logger(), "Received a goal request, with GripperPose -> (x = %.2f)",GripperGoal);
-        //(void)uuid;
+        (void)uuid;
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE; // Accept and execute the goal received.
     }
 
@@ -146,6 +146,7 @@ private:
         
         // Joint model group:
         const moveit::core::JointModelGroup* joint_model_group = move_group_interface.getCurrentState()->getJointModelGroup(my_param);
+        (void)joint_model_group;
 
         // Check GRIPPER LIMITS:
         double GPupper, GPlower = 0.0;

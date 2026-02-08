@@ -97,7 +97,7 @@ private:
         auto joint = goal->joint;
         double value = goal->value;
         RCLCPP_INFO(get_logger(), "Received a moveR request, with Joint+Value -> (%s -> %.2f)", joint.c_str(), value);
-        //(void)uuid;
+        (void)uuid;
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE; // Accept and execute the goal received.
     }
 
@@ -206,7 +206,7 @@ private:
         
         // Check if INPUT JOINT VALUES are within the JOINT LIMIT VALUES:
         bool LimitCheck = false;
-        auto InputJoint = "Valid";
+        std::string InputJoint = "Valid";
 
         if (joint == "joint1"){
             j1 = j1 + value;

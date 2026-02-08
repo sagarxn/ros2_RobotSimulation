@@ -98,7 +98,7 @@ private:
         double moveY =  goal->movey;
         double moveZ =  goal->movez;
         RCLCPP_INFO(get_logger(), "Received a LINEAR GOAL request, with XYZ VECTOR -> (x = %.2f, y = %.2f, z = %.2f)", moveX, moveY, moveZ);
-        //(void)uuid;
+        (void)uuid;
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE; // Accept and execute the goal received.
     }
 
@@ -152,6 +152,7 @@ private:
         
         // Joint model group:
         const moveit::core::JointModelGroup* joint_model_group = move_group_interface.getCurrentState()->getJointModelGroup(my_param);
+        (void)joint_model_group;
 
         // Get CURRENT POSE:
         auto current_pose = move_group_interface.getCurrentPose();
@@ -202,6 +203,7 @@ private:
             const double jump_threshold = 0.0;
             const double eef_step = 0.001;
             double fraction = move_group_interface.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
+            (void)fraction;
             
             bool success2 = (move_group_interface.execute(trajectory) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
 

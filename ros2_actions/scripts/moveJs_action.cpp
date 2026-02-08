@@ -98,7 +98,7 @@ private:
         auto JointGoal = ros2_data::msg::JointPoseS();
         JointGoal =  goal->goal;
         RCLCPP_INFO(get_logger(), "Received a goal request, with JointPose -> (%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f)",JointGoal.joint1,JointGoal.joint2,JointGoal.joint3,JointGoal.joint4,JointGoal.joint5,JointGoal.joint6,JointGoal.joint7);
-        //(void)uuid;
+        (void)uuid;
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE; // Accept and execute the goal received.
     }
 

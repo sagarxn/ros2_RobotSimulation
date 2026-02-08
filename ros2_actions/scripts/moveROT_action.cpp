@@ -99,7 +99,7 @@ private:
         double yaw =  goal->yaw;
         RCLCPP_INFO(get_logger(), "Received a PoseGoal/Orientation (ROT) request:");
         RCLCPP_INFO(this->get_logger(), "Relative ORIENTATION (Euler) -> (yaw = %.2f, pitch = %.2f, roll = %.2f)", yaw, pitch, roll);
-        //(void)uuid;
+        (void)uuid;
         return rclcpp_action::GoalResponse::ACCEPT_AND_EXECUTE; // Accept and execute the goal received.
     }
 
@@ -153,6 +153,7 @@ private:
         
         // Joint model group:
         const moveit::core::JointModelGroup* joint_model_group = move_group_interface.getCurrentState()->getJointModelGroup(my_param);
+        (void)joint_model_group;
 
         // Get CURRENT POSE:
         auto current_pose = move_group_interface.getCurrentPose();
