@@ -43,6 +43,10 @@ find_package(ros2_data REQUIRED)
 find_package(rclcpp_action REQUIRED)
 find_package(std_msgs REQUIRED)
 
+include_directories(
+  ${CMAKE_CURRENT_SOURCE_DIR}/../include
+)
+
 # ===== ACTIONS ===== #
 # moveJ_action.cpp:
 add_executable(moveJ_action scripts/moveJ_action.cpp)

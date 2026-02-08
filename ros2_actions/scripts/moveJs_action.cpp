@@ -40,7 +40,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 
-#include <moveit/move_group_interface/move_group_interface_improved.h>
+#include <move_group_interface_improved.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
 
 #include "ros2_data/action/move_js.hpp"
